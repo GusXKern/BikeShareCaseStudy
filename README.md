@@ -79,7 +79,7 @@ An analysis of the usertype column shows that the combined dataset refers to mem
 ```python
 all_trips['usertype'].value_counts()
 ```
-![Output of above code]("C:\users\guske\Pictures\Screenshots\4_member_names.png")
+![Output of above code](4_member_names.png)
 
 
 In order to fix this I set Subscriber to member and Customer to casual using this code:
@@ -145,7 +145,7 @@ Now that we have all the columns needed for analysis, we'll need to use the .gro
 print("\nRide length statistics grouped by usertype:\n",
 all_trips_v2.groupby('usertype')['ride_length'].agg(['mean', 'median', 'max', 'min']))
 ```
-![Summary statistics grouped by usertype]("C:\Users\guske\Pictures\Screenshots\member_mean.png")
+![Summary statistics grouped by usertype](member_mean.png)
 
 
 As this shows, casual ride times are much higher per trip than those of members. We can then see how the day of the week impacts average ride length:
@@ -162,7 +162,7 @@ categories=days_order, ordered=True)
 print("\nAverage ride length (sorted by day of week):\n", all_trips_v2.groupby(['usertype',
 'day_of_week'])['ride_length'].mean())
 ```
-![Average Ride Length]("C:\users\guske\Pictures\Screenshots\avg_ride_len.png")
+![Average Ride Length](avg_ride_len.png)
 
 
 I performed more analysis in this manner and then used .to_csv to download this grouped data for use in the next phase of analysis, share:
@@ -185,11 +185,11 @@ There are two different measures: number of rides and ride duration. There are t
 
 
 An analysis by month shows that there isn't a discernible difference in trend by group, beyond the fact that there are many more rides taken by members:
-![Members vs Casuals by number of rides by month]("C:\Users\guske\Pictures\Screenshots\Tableau_Chi\Rides_month.png")
+![Members vs Casuals by number of rides by month](Rides_month.png)
 
 
 However, an analysis of weekdays shows that casual users ride for much longer, and are more likely to ride on the weekend vs the members:
-![Weekday data]("C:\Users\guske\Pictures\Screenshots\Tableau_Chi\Rides_both.png")
+![Weekday data](Rides_both.png)
 
 
 Given the analysis performed in these first two parts, it's clear that there are two key differences:
@@ -203,7 +203,7 @@ Putting these two pieces of information together, it seems like members are more
 
 
 In order to test this theory, in my final visualization, I used the longitude/latitude data from the 2020 Q1 data to map the 5 most common station destinations for both casual users and members:
-![Chicago Map]("C:\Users\guske\Pictures\Screenshots\Tableau_Chi\Map.png")
+![Chicago Map](Map.png)
 
 
 In the end, this hypothesis is confirmed by the map. The orange member stations are all centered around a key transit hub - Chicago Union Station, and a commercial district further away from the lake. Meanwhile, the top-five casual user stations are by popular tourist/recreational spots closer to the lakeshore, like the Navy Pier and the Chicago History Museum.
