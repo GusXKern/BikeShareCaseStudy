@@ -50,7 +50,7 @@ In this phase, we analyze the datasets we are using to see if any cleaning/manip
 
 
 After opening all four files in Excel, it was clear that the first step would be to rename the columns in the 2019 Q2 and 2020 Q1 files to match those in the 2019 Q3 and 2019 Q4 files. The image below shows the name changes:
-![Image of column name changes]("C:/users/guske/Pictures/Screenshots/column_changes.png")
+![Image of column name changes]("column_changes.png")
 
 
 After making the column name changes, I uploaded the four files to Google Colab using the pandas library:
